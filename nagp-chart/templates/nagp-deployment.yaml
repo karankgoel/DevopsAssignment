@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nagp-deployment
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: nagp
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: nagp
+    spec:
+      containers:
+      - name: karan
+        image: {{ .Values.imageName }}
+        ports:
+        - containerPort: 80

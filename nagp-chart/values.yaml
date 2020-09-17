@@ -1,0 +1,3 @@
+replicas: 1
+nodePort: 30157
+imageName: dtr.nagarro.com:443/i-karangoel-master
